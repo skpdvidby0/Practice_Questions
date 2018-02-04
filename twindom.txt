@@ -1,0 +1,28 @@
+from collections import defaultdict
+ class Graph:
+     def __init__(self):
+         self.graph=defaultdict(list)
+     def addEdge(self,u,v):
+         self.graph[u].append(v)
+
+
+
+#include <array>
+#include <unordered_set>
+#include <vector>
+
+typedef std::array<double,3> Vec3;
+double xxx(const Vec3& x, const Vec3& y){
+	return x[0]*y[0]+x[1]*y[1]+x[2]*y[2];
+}
+bool yyy(const std::vector<unsigned>&x){
+	for(unsigned i=0;i<x.size();++i){
+	std::unordered_set<unsigned> set;
+	for(unsigned j=0;j<x.size();++j){
+		if(i==j) continue;
+		if(set.count(x[j]*x[j])) return True;
+		else set.insert(x[i]*x[i]-x[j]*x[j]);
+		}
+		}
+		return false;
+}
